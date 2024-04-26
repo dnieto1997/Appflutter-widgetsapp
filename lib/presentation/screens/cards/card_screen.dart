@@ -57,6 +57,7 @@ class _CardType1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      clipBehavior: Clip.hardEdge,
       elevation: elevation,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
@@ -174,9 +175,15 @@ class _CardType4 extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.topRight,
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.more_vert_outlined),
+            child: Container(
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius:
+                      BorderRadius.only(bottomLeft: Radius.circular(20))),
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.more_vert_outlined),
+              ),
             ),
           ),
           // Removed 'const' from Align widget

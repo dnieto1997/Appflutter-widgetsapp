@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
 import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
 import 'package:widgets_app/presentation/screens/cards/card_screen.dart';
+import 'package:widgets_app/presentation/widgets/side_menu.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String name = 'home_screen';
@@ -13,6 +14,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Fluuter + Material 3')),
       body: _HomeView(),
+      drawer: const SideMenu(),
     );
   }
 }
@@ -48,8 +50,8 @@ class _CustomListView extends StatelessWidget {
         title: Text(menuItem.title),
         subtitle: Text(menuItem.subtitle),
         onTap: () {
-          /*      context.push(menuItem.link); */
-          context.pushNamed(CardScreen.name);
+          context.push(menuItem.link);
+          /*    context.pushNamed(menuItem.link); */
         });
   }
 }
